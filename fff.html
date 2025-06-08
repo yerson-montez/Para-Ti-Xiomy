@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> >3 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="js/scrollreveal.js"></script>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/corazon.css">
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="background" id="background"></div>
+
+    <div id="barracarga">
+        <div id="cargando"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            document.getElementById('barracarga').style.opacity = '0';
+        }
+    </script>
+
+    <div id="container">
+        <div class="saludo">
+            <center>
+                <audio id="demo" src="perfect.mp3"></audio>
+                <script>
+                    document.getElementById('demo').pause();
+                </script>
+                <h1 class="entrada animacion-1">Hoy es un día importante...</h1>
+                <h2 class="inicio-h1 animacion-2">Hay algo que te quiero mostrar</h2>
+                <h2 class="inicio-h1 animacion-4">¿Estás lista para esto? 😘</h2>
+                <p>
+                    <span class="animacion-5">3..</span>
+                    <span class="animacion-6">2..</span>
+                    <span class="animacion-7">1..</span>
+                </p>
+                <a onclick="cambiar()" id="play">
+                    <img src="img/rosa1.jpg" class="animacion-8 img">
+                </a>
+            </center>
+        </div>
+    </div>
+
+    <div id="container2" style="display: none;">
+        <div class="saludo2">
+            <center>
+                <h1 class="title">Nuestra historia de amor ;3 <br><br></h1>
+            </center>
+            <h2><span class="typed"></span></h2>
+        </div>
+    </div>
+
+    <script>
+        function cambiar() {
+            document.getElementById('demo').play();
+            document.getElementById('container').style.display = 'none';
+            document.getElementById('container2').style.display = 'block';
+
+            var frases = [
+                'Nunca imaginé que un simple mensaje...',
+                'El tiempo pasó y, entre bromas...',
+                'Las dudas todavía rondaban...',
+                '—¿Quieres ser mi novia?',
+                '—Pues está bien… acepto.',
+                'Todo comenzó el 16/09/2024...',
+                'Bueno por este catorce de febrero...',
+                'Gracias por llegar a mi vida, te amo.'
+            ];
+
+            const typed = new Typed('.typed', {
+                strings: frases,
+                typeSpeed: 60,
+                startDelay: 2000,
+                cursorChar: '<3',
+                onComplete: function () {
+                    setTimeout(() => {
+                        document.getElementById("background").style.backgroundImage = "url('img/lufy.jpg')";
+                    }, 500);
+                }
+            });
+        }
+    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/animaciones-1.js"></script>
+    <script src="js/tardado.js"></script>
+</body>
+
+</html>

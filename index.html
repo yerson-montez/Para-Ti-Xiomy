@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te/quiero/mucho</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="js/scrollreveal.js"></script>
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/corazon.css" type="" media="">
+    <title> >3.... </title>  
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="js/stars.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/corazon.css">
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="background" id="background" style="background-image: url('img/lufy.jpg');"></div>
+    <div id="stars"></div>
+
+    <script>
+        window.onload = function () {
+            document.getElementById('barracarga').style.opacity = '0';
+            initStars();
+        }
+    </script>
+
+    <div id="barracarga">
+        <div id="cargando"></div>
+    </div>
+
+    <div id="container">
+        <div class="saludo">
+            <center>
+                <audio id="demo" src="perfect.mp3"></audio>
+                <script>
+                    document.getElementById('demo').pause();
+                </script>
+                <h1 class="entrada animacion-1">Hoy es un día importante, especialmente para ti...</h1>
+                <h2 class="inicio-h1 animacion-2">Hay algo que te quiero decirte</h2>
+                <h2 class="inicio-h1 animacion-4">¿Estás lista para esto? </h2>
+                <p>
+                    <span class="animacion-5">3..</span>
+                    <span class="animacion-6">2..</span>
+                    <span class="animacion-7">1..</span>
+                </p>
+                <a onclick="cambiar()" id="play">
+                    <img src="img/rosa1.jpg" class="animacion-8 img">
+                </a>
+            </center>
+        </div>
+    </div>
+
+    <div id="container2" style="display: none;">
+        <div class="saludo2">
+            <center>
+                <h1 class="title">"Te quiero mucho"<br><br></h1>
+            </center>
+            <h2><span class="typed"></span></h2>
+        </div>
+    </div>
+
+    <script>
+        function cambiar() {
+            document.getElementById('demo').play();
+            document.getElementById('container').style.display = 'none';
+            document.getElementById('container2').style.display = 'block';
+
+            var frases = [
+                'Feliz cumpleaños, Xiomy ❤️',
+
+                'Hoy no solo celebramos tu cumple, sino también que el universo nos haya regalado a alguien tan especial como tú.',
+
+                'En estos tres meses que te vengo conociendo, me he dado cuenta de que detrás de esa sonrisa hay una persona increíblemente noble, divertida y fuerte.',
+
+                'Hemos vivido momentos bien bonitos… desde caminar bajo las estrellas hasta reírnos por cosas que solo nosotros entendemos ',
+
+                'Todo eso me ha hecho sentir tranquilo, feliz, y con muchas ganas de seguir conociéndote cada día más.',
+
+                'Me alegra tenerte en mi vida. Eres como una canción favorita: no me canso de escucharte, y siempre descubro algo nuevo en ti.',
+
+                'Espero que este nuevo año te traiga salud, alegría, aventuras locas y muchas anécdotas más (ojalá algunas conmigo ).',
+
+                'Ojalá sigamos compartiendo más momentos como los que ya vivimos… o incluso mejores. ¿Por qué no?',
+
+                'Y como estás estudiando para ser enfermera, solo te pido algo, ya como paciente frecuente:',
+
+                '¡No te olvides de recetarme más de tus abrazos, que curan mejor que cualquier medicina! 🩺❤️',
+
+                'Gracias por cuidar de mi corazón, incluso sin darte cuenta de que a veces estaba roto.',
+
+                'Hoy pásala increíble, cómete ese pastel como si no hubiera dieta, ríe como si no existieran los exámenes jsjsjs…',
+
+                'Porque si alguien merece todo lo bonito del mundo… definitivamente eres tú.',
+
+                'Con mucho cariño, Yerson '
+            ];
+
+
+
+            const typed = new Typed('.typed', {
+                strings: frases,
+                typeSpeed: 60,
+                startDelay: 2000,
+                cursorChar: '<3',
+                onComplete: function () {
+                    setTimeout(() => {
+                        document.getElementById("background").style.backgroundImage = "url('img/nubef.png')";
+                    }, 500);
+                }
+            });
+        }
+    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/animaciones-1.js"></script>
+    <script src="js/tardado.js"></script>
+    <script src="js/stars.js"></script>
+</body>
+
+</html>
